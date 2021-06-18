@@ -28,8 +28,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
-import RootNavigator from './routes/rootStack';
-import TabsBottom from './app/routes/tabsBottom';
+import RootNavigator from './app/routes/rootStack';
+// import TabsBottom from './app/routes/tabsBottom';
+import Initializing from './app/routes/Initializing';
 
 
 const Section: React.FC<{
@@ -68,17 +69,23 @@ const App = () => {
   };
 
   return (
+    // <Initializing>
+
+    // </Initializing>
     <NavigationContainer>
 
-      <TabsBottom>
+      {/* <TabsBottom> */}
+      <Initializing>
 
-        {/* ini bisa bottom navigasi, tapi kalo  ke detail screen bottom navigasinya gak ilang */}
-      </TabsBottom>
+      </Initializing>
+
+      {/* ini bisa bottom navigasi, tapi kalo  ke detail screen bottom navigasinya gak ilang */}
+      {/* </TabsBottom> */}
 
       {/* <RootNavigator>
 
 
-      </RootNavigator> */}
+    // </RootNavigator> */}
 
     </NavigationContainer>
   );
