@@ -29,7 +29,7 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from './routes/rootStack';
-import TabsBottom from './routes/tabsBottom';
+import TabsBottom from './app/routes/tabsBottom';
 
 
 const Section: React.FC<{

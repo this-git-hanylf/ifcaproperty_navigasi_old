@@ -4,14 +4,16 @@ import { Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../components/Home';
+import Home from '../Screens/Home/index';
 import About from '../components/About';
 import Profil from '../components/Profil';
 import EmergencyCall from '../components/EmergencyCall';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-
+import colors from '../Theme/Colors';
 const Tab = createBottomTabNavigator();
+const iconActiveColor = colors.bg_coklat;
+const iconColor = colors.bg_hijaugelap;
 
 function getTabBarVisible(route) {
     // alert(route.name)
@@ -36,17 +38,17 @@ const tabsBottom = () => {
         <Tab.Navigator
             initialRouteName="TabBottom"
             tabBarOptions={{
-                activeTintColor: '#e91e63',
+                activeTintColor: iconActiveColor,
+                inactiveTintColor: iconColor
             }}
         >
             <Tab.Screen
-
                 name="Home"
                 component={HomeStack}
                 options={({ route }) => ({
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home-variant" solid color={color} size={size} />
+                        <MaterialCommunityIcons name="home-variant" color={color} size={size} />
                     ),
                     tabBarVisible: getTabBarVisible(route)
                 })}
